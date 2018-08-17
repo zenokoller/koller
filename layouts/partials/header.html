@@ -1,29 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-        <meta name="author" content="Zeno Koller">
-        <meta name="description" content="Hugo theme with tachyons.io">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/css/tachyons.min.css">
-        <link rel="stylesheet" href="/css/style.css">
-    </head>
-    <body class="helvetica bg-near-white">
-        <header class="pa3 pb5 f4 lh-copy">
-            <nav>
-                <div class="fl w-10">
-                    <a href="/">
-                        <img src="/images/logo.png" class="logo dib" alt="logo">
-                    </a>
-                </div>
-                <ul class="list fl w-90 pa2 mv1 fw5 tr">
-                {{ $currentPage := . }}
-                {{ range .Site.Menus.main }}
-                    <li class="pl3 dib">       
-                        <a class="{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
-                    </li>
-                {{ end }}
-                </ul>
-            </nav>
-      </header>
+<header class="pa3 pb5 f4 lh-copy">
+    <nav>
+        <div class="fl w-10">
+            <a href="/">
+                <img src="/images/logo.png" class="logo dib" alt="logo">
+            </a>
+        </div>
+        <ul class="list fl w-90 pa2 mv1 fw5 tr">
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+            <li class="pl3 dib">       
+                <a class="{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+            </li>
+        {{ end }}
+        </ul>
+    </nav>
+</header>

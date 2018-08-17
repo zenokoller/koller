@@ -1,0 +1,13 @@
+{{ define "main" }}
+<main class="pa3 center measure-wide lh-copy">
+    <h2 class="f2 mt1 mb3 lh-title">{{ .Title }}</h2>
+    <ul class="list pl0">
+    {{ range .Pages.ByDate }}
+        <li class="lh-copy">
+          <a href="{{.Permalink}}" class="f4">{{ .Title }}</a>
+          <span>&nbsp;{{.Date.Format .Site.Params.ShortDateFmt}}</span>
+        </li>
+    {{ end }}
+    </ul>
+</main>
+{{ end }}

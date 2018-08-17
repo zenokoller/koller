@@ -1,7 +1,3 @@
 <footer class="pt0 pb5 tc center">
-        <small class="f8 center lh-copy">
-          &copy; 2018 Zeno Koller
-        </small>
-    </footer>
-  </body>
-</html>
+    <small class="f7 center lh-copy">&copy; {{ .Date.Format "2006" }} {{.Site.Params.Copyright}}</small>
+</footer>
