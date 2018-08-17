@@ -1,0 +1,12 @@
+{{ partial "header.html" . }}
+
+<main class="pa3 center measure-wide lh-copy">
+    
+    {{ .Render "title" }}
+
+    <div class="serif f6 pb2 lh-copy">
+        {{ .Content }}
+    </div>
+</main>
+
+{{ partial "footer.html" . }}
