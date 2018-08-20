@@ -14,6 +14,21 @@
     <div class="serif f6 pb2 lh-copy">
         {{ .Content }}
     </div>
+    <footer class="cf">
+        <div class="fl w-third tl">
+        {{if .PrevInSection}}
+            <a href="{{.PrevInSection.Permalink}}">{{.Site.Params.PrevLabel}}</a>
+        {{end}}
+        </div>
+        <div class="fl w-third tc">
+            <a href="{{.CurrentSection.Permalink}}">{{.Site.Params.IndexLabel}}</a>
+        </div>
+        <div class="fl w-third tr">
+        {{if .NextInSection}}
+            <a href="{{.NextInSection.Permalink}}">{{.Site.Params.NextLabel}}</a>
+        {{end}}
+        </div>
+    </footer>
 </main>
 
 {{ end }}
