@@ -5,6 +5,7 @@
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tristique, nisi in tempus cursus, ex magna commodo ante, a faucibus enim velit sit amet odio. Nam vitae porttitor urna, id condimentum mi. Nunc a tortor dui. Suspendisse potenti. Aenean facilisis velit enim, et venenatis libero fermentum aliquet. 
     </div>
     {{ range (where .Site.Pages "Section" "posts") }}
+    {{ if gt (len .Sections) 0 }}
     <ul class="list pl0">
         {{ range .Sections }}
         <li class="lh-copy f4">
@@ -12,6 +13,7 @@
         </li>
         {{ end }}
     </ul>
+    {{ end }}
   {{ end }}
 </main>
 {{ end }}
