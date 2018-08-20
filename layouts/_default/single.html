@@ -18,6 +18,8 @@
         <div class="fl w-third tl">
         {{if .PrevInSection}}
             <a href="{{.PrevInSection.Permalink}}">{{.Site.Params.PrevLabel}}</a>
+        {{else}}
+            &nbsp;
         {{end}}
         </div>
         <div class="fl w-third tc">
@@ -26,6 +28,8 @@
         <div class="fl w-third tr">
         {{if .NextInSection}}
             <a href="{{.NextInSection.Permalink}}">{{.Site.Params.NextLabel}}</a>
+        {{else}}
+            &nbsp;
         {{end}}
         </div>
     </footer>
