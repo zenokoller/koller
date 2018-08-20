@@ -8,7 +8,11 @@
     <header class="mb4">
         <h2 class="f2 mt0 mb0 lh-title">{{ .Title }}</h2>
         <div class="f7">
-            {{ .Date.Format .Site.Params.LongDateFmt }}&nbsp;·&nbsp;<a href="{{ .Permalink }}">Permalink</a>
+            {{ .Date.Format .Site.Params.LongDateFmt }}
+            {{ if .Params.coordinates }}
+            &nbsp;·&nbsp;{{ partial "coordinates.html" . }}
+            {{end}}
+            &nbsp;·&nbsp;<a href="{{ .Permalink }}">Permalink</a>
         </div>
     </header>
     <div class="serif f6 pb2 lh-copy">
