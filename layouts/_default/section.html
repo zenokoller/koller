@@ -4,7 +4,7 @@
     <ul class="list pl0">
     {{ range .Pages.ByDate }}
         <li class="lh-copy">
-          <a href="{{.Permalink}}" class="f4">{{ .Title }}</a>
+          <a href="{{.Permalink}}" class="f5 f4-ns">{{ .Title }}</a>
           <span>&nbsp;{{.Date.Format .Site.Params.ShortDateFmt}}</span>
         </li>
     {{ end }}

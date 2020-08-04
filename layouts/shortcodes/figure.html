@@ -5,8 +5,9 @@
     {{ if or (.Get "caption") (.Get "attr")}}
     <figcaption class="mt1 i">
         {{ .Get "caption" }}
-        {{ with .Get "attrlink"}}<a href="{{.}}"> {{ end }}
-            {{ .Get "attr" }}
+        {{ if or (.Get "attrlink") (.Get "attr")}}<br><span class="f7">{{.Site.Params.AttributionLabel}}:</span>{{ end }}
+        {{ with .Get "attrlink"}}<a href="{{.}}" target="_blank"> {{ end }}
+            <span class="f7">{{ .Get "attr" }}</span>
         {{ if .Get "attrlink"}}</a> {{ end }}
     </figcaption>
     {{ end }}

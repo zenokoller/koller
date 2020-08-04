@@ -1,17 +1,1 @@
-{{range .Params.coordinates}}
-
-{{$lat := (float .lat)}}
-{{$lon := (float .lon)}}
-
-{{$latLabel := (cond (ge .lat 0) "N" "S")}}
-{{$latDeg := (math.Floor $lat)}}
-{{$latMin := (mul (sub $lat $latDeg) 60)}}
-
-{{$lonLabel := (cond (ge .lon 0) "E" "W")}}
-{{$lonDeg := (math.Floor $lon)}}
-{{$lonMin := (mul (sub $lon $lonDeg) 60)}}
-
-{{$linkText := (printf "%s %.0f° %.3f %s %.0f° %.3f" $latLabel $lat $latMin $lonLabel $lon $lonMin)}}
-
-<a href="https://www.google.com/maps/?q={{.lat}},{{.lon}}" target="_blank">{{ $linkText }}</a>
-{{end}}
+{{range .Params.coordinates}}{{$lat := (float .lat)}}{{$lon := (float .lon)}}{{$latLabel := (cond (ge .lat 0) "N" "S")}}{{$latDeg := (math.Floor $lat)}}{{$latMin := (mul (sub $lat $latDeg) 60)}}{{$lonLabel := (cond (ge .lon 0) "E" "W")}}{{$lonDeg := (math.Floor $lon)}}{{$lonMin := (mul (sub $lon $lonDeg) 60)}}{{$linkText := (printf "%s %.0f° %.3f %s %.0f° %.3f" $latLabel $lat $latMin $lonLabel $lon $lonMin)}}<a href="https://www.google.com/maps/?q={{.lat}},{{.lon}}" target="_blank">{{ $linkText }}</a>{{end}}

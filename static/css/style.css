@@ -1,2 +1,28 @@
-html { font-size: 20px; }
-.logo { width: 80px; max-width: 80px; }
+html { 
+    font-size: 20px; 
+    -webkit-font-smoothing: antialiased;
+}
+
+.logo { 
+    width: 80px; 
+    max-width: 80px; 
+}
+
+figure {
+    text-align: center;
+}
+
+figcaption {
+    text-align: left;
+}
+
+.footnotes hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+.footnotes li {
+    margin-bottom: 1rem;
+}
