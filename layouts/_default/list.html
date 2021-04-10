@@ -4,16 +4,28 @@
     <div class="serif f6 pb2 lh-copy">
     {{.Content}}
     </div>
-    {{ range (where .Site.Pages "Section" "posts") }}
-    {{ if gt (len .Sections) 0 }}
-    <ul class="list pl0">
-        {{ range .Sections }}
-        <li class="lh-copy f3 f4-ns">
-            <a href="{{.Permalink}}">{{ .Title }}</a>
-        </li>
+
+
+    {{ range .Site.Sections }}
+
+        <h3 class="f2 f3-ns"><a href="{{.Permalink}}">{{ .Title }}</a></h3>
+
+        {{ range (where .Site.Pages "Section" .Section) }}
+            {{ if gt (len .Sections) 0 }}
+                <ul class="list pl0">
+                    {{ range .Sections }}
+                    <li class="lh-copy f3 f4-ns">
+                        <a href="{{.Permalink}}">{{ .Title }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            {{ end }}
         {{ end }}
-    </ul>
+
+
     {{ end }}
-  {{ end }}
+
+    
+
 </main>
 {{ end }}
