@@ -1,8 +1,16 @@
-<header class="navbar db pa2 f4 lh-copy bg-near-white bb-ns b--moon-gray">
+<header class="navbar v-mid db pa2 f4 lh-copy bg-near-white bb-ns b--moon-gray">
     {{ if (fileExists "static/images/logo.png") -}}
+    <div>
         <a href="{{ "/" | absURL}}">
             <img src="{{ "/images/logo.png" | absURL}}" class="logo dib" alt="logo">
         </a>
-    {{end}}
     </div>
+    {{end}}
+
+    <div id="fastSearch" class="pr2">
+        <input id="searchInput" class="ba b--moon-gray" placeholder="Suche" tabindex="0">
+        <ul id="searchResults" class="pl0 f6 bg-near-white ba b--moon-gray "></ul>
+    </div>
+    <script src="{{ "/js/fuse.js" | absURL}}"></script>
+    <script src="{{ "/js/fastsearch.js" | absURL}}"></script>
 </header>
