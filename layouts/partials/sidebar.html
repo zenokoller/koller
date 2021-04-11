@@ -1,0 +1,62 @@
+{{ $currentPage := . }}
+
+<div class="sidebar bg-near-white br-ns b--moon-gray">
+
+  <!-- Sections -->
+  {{ with .Site.Sections }}
+  <ul class="list pt2 pl0">
+    {{ range . }}
+    <li>
+      <section class="pb3 b">
+        <a class="pl3 b db no-underline" href="{{ .Permalink }}">{{ .Title }}</a>
+
+
+        <!-- Subsections -->
+        {{ with .Sections }}
+        <ul class="list pt2 pl0">
+          {{ range . }}
+            <li>
+              <section class="pb2">
+
+                {{ $activeSubsection := .CurrentSection.IsAncestor $currentPage }}
+
+                <a class="sidebar-subsection-link pl4 b no-underline {{ if $activeSubsection }}active{{ end }}" 
+                   href="{{ .Permalink }}">{{ .Title }}</a>
+                  
+                  <!-- Only list pages if is current section-->
+                  {{ if $activeSubsection }}
+
+                    <!-- Pages -->
+                    {{ with .Pages }}
+                    <ul class="list pt2 pl4">
+                      {{ range .}}
+                        <li class="pl2 pb2">
+
+                          {{ $active := eq (.Page.Title) ($currentPage.Title) }}
+
+                          <a class="sidebar-page-link no-underline {{ if $active }}bold{{ else }}normal{{ end }}" 
+                             href="{{ .Permalink }}">{{ .Title }}</a>
+                        </li>
+                      {{ end }}
+                    </ul>
+                    {{ end }}
+
+                  {{ end }}
+
+
+              </section>
+            </li>
+          {{ end }}
+        </ul>
+        {{ end }}
+
+
+      </section>
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+
+</div>
+
+

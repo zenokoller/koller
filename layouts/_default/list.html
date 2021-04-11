@@ -1,14 +1,15 @@
 {{ define "main" }}
 <main class="pa3 pt2 center measure-wide lh-copy">
-    <h2 class="f2 mt0 mb3 lh-title">{{ .Title }}</h2>
+    {{ with .Content }}
     <div class="serif f6 pb2 lh-copy">
-    {{.Content}}
+        {{- . -}}
     </div>
+    {{ end }}
 
 
     {{ range .Site.Sections }}
 
-        <h3 class="f2 f3-ns"><a href="{{.Permalink}}">{{ .Title }}</a></h3>
+        <h2 class="f2 f3-ns"><a href="{{.Permalink}}">{{ .Title }}</a></h2>
 
         {{ range (where .Site.Pages "Section" .Section) }}
             {{ if gt (len .Sections) 0 }}

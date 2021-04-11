@@ -3,10 +3,52 @@ html {
     -webkit-font-smoothing: antialiased;
 }
 
-.logo { 
-    width: 80px; 
-    max-width: 80px; 
+.navbar { 
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 4rem;
 }
+
+.logo { 
+    height: 3rem; 
+    max-height: 3rem; 
+}
+
+.sidebar-mask { 
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh; 
+    display: none;
+    z-index: 9;
+}
+
+.sidebar { 
+    position: fixed;
+    top: 4rem; left: 0; bottom: 0;
+    width: 15rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.sidebar-subsection-link { 
+    border-left: 4px solid rgba(0,0,0,0);
+}
+
+.sidebar-subsection-link.active { 
+    border-color: blue;
+}
+
+.sidebar-page-link { 
+    font-size: 0.75rem;
+}
+
+.content { 
+    margin-top: 4rem;
+    margin-left: 15rem;
+}
+
+/* --- Partials --- */
 
 figure {
     text-align: center;

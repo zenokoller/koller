@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
     {{- partial "head.html" . -}}
-    <body class="helvetica bg-near-white">
+    <body class="db helvetica bg-near-white">
         {{- partial "header.html" . -}}
-        <div id="content">
+        <div class="sidebar-mask"></div>
+        <aside class="sidebar">
+            {{- partial "sidebar.html" . -}}
+        </aside>
+
+        <div id="content" class="content pt4">
         {{- block "main" . }}{{- end }}
         </div>
         {{- partial "footer.html" . -}}
