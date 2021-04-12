@@ -14,6 +14,11 @@ html {
     max-height: 3rem; 
 }
 
+.sidebar-button-image { 
+    height: 1rem;
+    max-height: 1rem;
+}
+
 .sidebar-mask { 
     position: fixed;
     top: 0; left: 0;
@@ -45,7 +50,12 @@ html {
 
 .content { 
     margin-top: 4rem;
-    margin-left: 15rem;
+}
+
+@media screen and (min-width: 60em) {
+    .content { 
+        margin-left: 15rem;
+    }
 }
 
 /* --- Partials --- */

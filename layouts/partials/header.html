@@ -1,16 +1,21 @@
 <header class="navbar v-mid db pa2 f4 lh-copy bg-near-white bb-ns b--moon-gray">
-    {{ if (fileExists "static/images/logo.png") -}}
-    <div>
+
+    {{ with "images/list.svg" }}
+    <div id="sidebarButton" class="dib dn-l pointer">
+        <img src="{{ . | absURL}}" class="dib h2 pa2" alt="sidebar-button"/>
+    </div>
+    {{end}}
+
+    {{ if (fileExists "static/images/logo.png") }}
+    <div class="dib">
         <a href="{{ "/" | absURL}}">
-            <img src="{{ "/images/logo.png" | absURL}}" class="logo dib" alt="logo">
+            <img src="{{ "/images/logo.png" | absURL}}" class="logo" alt="logo">
         </a>
     </div>
     {{end}}
 
-    <div id="fastSearch" class="pr2">
+    <div id="fastSearch" class="pv2">
         <input id="searchInput" class="ba b--moon-gray" placeholder="Suche" tabindex="0">
         <ul id="searchResults" class="pl0 f6 bg-near-white ba b--moon-gray "></ul>
     </div>
-    <script src="{{ "/js/fuse.js" | absURL}}"></script>
-    <script src="{{ "/js/fastsearch.js" | absURL}}"></script>
 </header>
