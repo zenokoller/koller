@@ -1,6 +1,14 @@
 {{ define "main" }}
 <main class="pa3 center measure-wide lh-copy">
+
+    {{ with .Content }}
+    <div class="serif f6 pb2 lh-copy">
+        {{- . -}}
+    </div>
+    {{ else }}
     <h2 class="f2 mt1 mb3 lh-title">{{ .Title }}</h2>
+    {{ end }}
+
     <ul class="list pl0">
     {{ range .Pages.ByDate }}
         <li class="lh-copy">

@@ -52,6 +52,11 @@ html {
     margin-top: 4rem;
 }
 
+.bg-letter { 
+    background-color: #e8e8e4;
+}
+
+
 @media screen and (min-width: 60em) {
     .content { 
         margin-left: 15rem;

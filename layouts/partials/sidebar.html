@@ -27,9 +27,9 @@
                   {{ if $activeSubsection }}
 
                     <!-- Pages -->
-                    {{ with .Pages }}
+                    {{ with .Pages.Reverse }}
                     <ul class="list pt2 pl4">
-                      {{ range .}}
+                      {{ range . }}
                         <li class="pl2 pb2">
 
                           {{ $active := eq (.Page.Title) ($currentPage.Title) }}

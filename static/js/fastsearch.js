@@ -55,7 +55,6 @@ var onKeydown = function(event) {
   // DOWN (40) arrow
   if (event.keyCode == 40) {
     if (searchVisible && resultsAvailable) {
-      console.log("down");
       event.preventDefault(); // stop window from scrolling
       if ( document.activeElement == maininput) { first.focus(); } // if the currently focused element is the main input --> focus the first <li>
       else if ( document.activeElement == last ) { last.focus(); } // if we're at the bottom, stay there
@@ -119,8 +118,7 @@ function loadSearch() {
       minMatchCharLength: 2,
       keys: [
         'title',
-        'permalink',
-        'summary'
+        // 'contents'
         ]
     };
     fuse = new Fuse(data, options); // build the index from the json file
