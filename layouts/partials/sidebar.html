@@ -35,7 +35,7 @@
                           {{ $active := eq (.Page.Title) ($currentPage.Title) }}
 
                           <a class="sidebar-page-link no-underline {{ if $active }}bold{{ else }}normal{{ end }}" 
-                             href="{{ .Permalink }}">{{ .Title }}</a>
+                             href="{{ .Permalink }}">{{ .Params.navTitle | default .Title }}</a>
                         </li>
                       {{ end }}
                     </ul>
