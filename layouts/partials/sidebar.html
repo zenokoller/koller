@@ -2,17 +2,11 @@
 
 <div id="sidebar" class="sidebar bg-near-white br-ns b--moon-gray dn db-l">
 
-  <!-- Sections -->
-  {{ with .Site.Sections }}
-  <ul class="list pt2 pl0">
-    {{ range . }}
-    <li>
-      <section class="pb3 b">
-        <a class="pl3 b db no-underline" href="{{ .Permalink }}">{{ .Title }}</a>
+
 
 
         <!-- Subsections -->
-        {{ with .Sections }}
+        {{ with .Site.Sections }}
         <ul class="list pt2 pl0">
           {{ range . }}
             <li>
@@ -51,11 +45,6 @@
         {{ end }}
 
 
-      </section>
-    </li>
-    {{ end }}
-  </ul>
-  {{ end }}
 
 </div>
 
