@@ -6,7 +6,7 @@
 
 <main class="pa3 pt2 center measure-wide lh-copy">
     <header class="mb4">
-        <h2 class="f3 f2-ns mt0 mb0 lh-title">{{ .Title }}</h2>
+        <h2 class="f4 f3-ns mt0 mb0 lh-title">{{ .Title }}</h2>
         <div class="f7">
             {{- partial "date.html" . -}}{{ if .Params.coordinates }}&nbsp;·&nbsp;{{- partial "coordinates.html" . -}}{{end}}
         </div>
