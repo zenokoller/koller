@@ -7,7 +7,7 @@
   <ul class="list pt2 pl0">
     {{ range . }}
     <li>
-      <section class="pb3 b">
+      <section class="pb3">
         <a class="pl3 b db no-underline" href="{{ .Permalink }}">{{ .Title }}</a>
 
 
@@ -16,11 +16,10 @@
         <ul class="list pt2 pl0">
           {{ range . }}
             <li>
-              <section class="pb2">
+              <section class="pb2 pl4">
 
                 {{ $activeSubsection := .CurrentSection.IsAncestor $currentPage }}
-
-                <a class="sidebar-subsection-link pl4 b no-underline {{ if $activeSubsection }}active{{ end }}" 
+                <a class="{{ if $activeSubsection }}underline{{ else }}no-underline{{ end }}" 
                    href="{{ .Permalink }}">{{ .Params.navTitle | default .Title }}</a>
                   
                   <!-- Only list pages if is current section-->
@@ -30,11 +29,11 @@
                     {{ with .Pages.Reverse }}
                     <ul class="list pt2 pl4">
                       {{ range . }}
+
                         <li class="pl2 pb2">
+                        {{ $active := eq (.Page.Title) ($currentPage.Title) }}
 
-                          {{ $active := eq (.Page.Title) ($currentPage.Title) }}
-
-                          <a class="sidebar-page-link no-underline {{ if $active }}bold{{ else }}normal{{ end }}" 
+                          <a class="sidebar-page-link no-underline {{ if $active }}b{{ end }}" 
                              href="{{ .Permalink }}">{{ .Params.navTitle | default .Title }}</a>
                         </li>
                       {{ end }}
