@@ -20,7 +20,7 @@
 
                 {{ $activeSubsection := .CurrentSection.IsAncestor $currentPage }}
 
-                <a class="sidebar-subsection-link pl4 b no-underline {{ if $activeSubsection }}active{{ end }}" 
+                <a class="sidebar-subsection-link pl4 dib b no-underline {{ if $activeSubsection }}active{{ end }}" 
                    href="{{ .Permalink }}">{{ .Params.navTitle | default .Title }}</a>
                   
                   <!-- Only list pages if is current section-->
