@@ -1,14 +1,14 @@
 <figure class="mh0 mv4 {{ with .Get "class" }}{{.}}{{ end }}">
-    {{ with .Get "link"}}<a href="{{.}}">{{ end }}
-        <img src="{{ .Get "src" }}" {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt"}}{{.}}{{else}}{{ .Get "caption" }}{{ end }}"{{ end }} />
-    {{ if .Get "link"}}</a>{{ end }}
-    {{ if or (.Get "caption") (.Get "attr")}}
-    <figcaption class="mt1 i">
-        {{ .Get "caption" }}
-        {{ if or (.Get "attrlink") (.Get "attr")}}<br><span class="f7">{{.Site.Params.AttributionLabel}}:</span>{{ end }}
-        {{ with .Get "attrlink"}}<a href="{{.}}" target="_blank"> {{ end }}
-            <span class="f7">{{ .Get "attr" }}</span>
-        {{ if .Get "attrlink"}}</a> {{ end }}
-    </figcaption>
-    {{ end }}
+{{ with .Get "link"}}<a href="{{.}}">{{ end }}
+<img src="{{ .Get "src" }}" {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt"}}{{.}}{{else}}{{ .Get "caption" }}{{ end }}"{{ end }} />
+{{ if .Get "link"}}</a>{{ end }}
+{{ if or (.Get "caption") (.Get "attr")}}
+<figcaption class="mt1 i">
+{{ .Get "caption" }}
+{{ if or (.Get "attrlink") (.Get "attr")}}<br><span class="f7">{{.Site.Params.AttributionLabel}}:</span>{{ end }}
+{{ with .Get "attrlink"}}<a href="{{.}}" target="_blank"> {{ end }}
+<span class="f7">{{ .Get "attr" }}</span>
+    {{ if .Get "attrlink"}}</a> {{ end }}
+</figcaption>
+{{ end }}
 </figure>
