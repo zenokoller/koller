@@ -14,12 +14,13 @@
     </div>
     {{ end }}
 
+    {{ with .Pages.Reverse }}
     <ul class="list pl0">
-    {{ range .Pages.ByDate }}
+    {{ range . }}
         <li class="lh-copy">
           <a href="{{.Permalink}}" class="f5 f4-ns">{{ .Title }}</a>
-          <span>&nbsp;{{.Date.Format .Site.Params.ShortDateFmt}}</span>
         </li>
+    {{ end }}
     {{ end }}
     </ul>
 </main>
