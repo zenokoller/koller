@@ -17,9 +17,11 @@
     {{ with .Pages.Reverse }}
     <ul class="list pl0">
     {{ range . }}
-        <li class="lh-copy">
-          <a href="{{.Permalink}}" class="f5 f4-ns">{{ .Title }}</a>
-        </li>
+        {{ if not (eq .Params.hideFromNav "true") }}
+            <li class="lh-copy">
+              <a href="{{.Permalink}}" class="f5 f4-ns">{{ .Title }}</a>
+            </li>
+        {{ end }}
     {{ end }}
     {{ end }}
     </ul>

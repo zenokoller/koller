@@ -30,13 +30,16 @@
                     {{ with .Pages.Reverse }}
                     <ul class="list pt2 pl4">
                       {{ range . }}
-                        <li class="pl2 pb2">
+                        {{ if not (eq .Params.hideFromNav "true") }}
 
-                          {{ $active := eq (.Page.Title) ($currentPage.Title) }}
+                          <li class="pl2 pb2">
 
-                          <a class="sidebar-page-link no-underline {{ if $active }}bold{{ else }}normal{{ end }}" 
-                             href="{{ .Permalink }}">{{ .Params.navTitle | default .Title }}</a>
-                        </li>
+                            {{ $active := eq (.Page.Title) ($currentPage.Title) }}
+
+                            <a class="sidebar-page-link no-underline {{ if $active }}bold{{ else }}normal{{ end }}" 
+                               href="{{ .Permalink }}">{{ .Params.navTitle | default .Title }}</a>
+                          </li>
+                        {{ end }}
                       {{ end }}
                     </ul>
                     {{ end }}
